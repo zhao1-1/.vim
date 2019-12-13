@@ -130,8 +130,16 @@ noremap <LEADER>r :source $MYVIMRC<CR>
 nnoremap <LEADER>mv :set splitright<CR>:vsplit $MYVIMRC<CR>
 " 在Insert模式下，按两下j键，相当于<Esc>，并且光标回到最初编辑位置
 inoremap jj <Esc>`^
-" 在Insert模式下，Ctrl+d删除整行
-inoremap <C-d> <Esc>ddi
+" 在Insert模式下，Ctrl+a，移动光标至行首
+inoremap <C-a> <Esc>I
+" 在Insert模式下，Ctrl+e，移动光标至行尾
+inoremap <C-e> <Esc>A
+" 在Insert模式下，Ctrl+u，删除或剪切光标之前的所有内容；
+inoremap <C-u> <Esc>ld0I
+" 在Insert模式下，Ctrl+k，删除或剪切光标之后的所有内容；
+inoremap <C-k> <Esc>ld$A
+" 在Insert模式下，Ctrl+y，粘贴ctrl+u或ctrl+K剪切的内容
+inoremap <C-y> <Esc>pa
 " 在visual模式下，取消按u和U转换大小写，而是跟Normal一样，用~键转换大小写
 vnoremap u <nop>
 vnoremap U <nop>
