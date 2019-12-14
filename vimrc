@@ -20,7 +20,7 @@ noremap tx :r !figlet
 " ------------------
 " ===Editor Setup===
 " ------------------
-echom "Welcome to my world ~(>^.^<)~"
+" echom "Welcome to my world ~(>^.^<)~"
 
 " ===
 " === Main code Display
@@ -74,8 +74,8 @@ set softtabstop=2
 " 显示行尾空格
 set list
 set listchars=tab:\|\ ,trail:▫
-" 滚屏的时候上下始终留8行
-set scrolloff=8
+" 滚屏的时候上下始终留5行
+set scrolloff=5
 " 设置缩进
 set tw=0
 set indentexpr=
@@ -117,6 +117,10 @@ noremap 0 $
 " 对调; :两个键位
 noremap ; :
 noremap : ;
+" Join lines
+noremap <C-j> J
+" Help
+noremap <C-k> K
 " {  } 变成了[]，[代表段首，]代表段尾
 "noremap { [
 "noremap } ]
