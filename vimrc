@@ -20,7 +20,7 @@ noremap tx :r !figlet
 " ------------------
 " ===Editor Setup===
 " ------------------
-" echom "Welcome to my world ~(>^.^<)~"
+" echom "Welcome to my vimrc ~(>^.^<)~"
 
 " ===
 " === Main code Display
@@ -70,7 +70,6 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-" set autoindent
 " 显示行尾空格
 set list
 set listchars=tab:\|\ ,trail:▫
@@ -88,14 +87,14 @@ set foldlevel=99
 "com! FormatJSON %!python3 -m json.tool
 " Cursor shape（vim三种不同模式下光标不同样式）
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+"let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " 设置下边状态栏为2
 set laststatus=2
 " 在当前文件目录下执行命令
 set autochdir
 " 打开vim，光标会停留在上次关闭时候的位置
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+"au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
 
@@ -127,7 +126,7 @@ noremap <C-k> K
 "noremap [ {
 "noremap ] }
 " 保存、退出、生效文件
-noremap <LEADER>s :w<CR>
+noremap <LEADER>w :w<CR>
 noremap <LEADER>q :q<CR>
 noremap <LEADER>r :source $MYVIMRC<CR>
 " Open your ~/.vim/vimrc File
@@ -145,10 +144,13 @@ inoremap <C-k> <Esc>ld$A
 " 在Insert模式下，Ctrl+y，粘贴ctrl+u或ctrl+K剪切的内容
 inoremap <C-y> <Esc>pa
 " 在visual模式下，取消按u和U转换大小写，而是跟Normal一样，用~键转换大小写
-vnoremap u <nop>
-vnoremap U <nop>
+"vnoremap u <nop>
+"vnoremap U <nop>
 " Press space twice to jump to the next '<++>' and edit it
 noremap <LEADER><LEADER> <ESC>/<++><CR>:nohlsearch<CR>c4l
+" Find duplicate words
+map <LEADER>fd /\(\<\w\+\>\)\_s*\1
+
 
 
 " ===
@@ -190,7 +192,7 @@ noremap sh <C-w>t<C-w>K
 " use <LEADER>+h/j/k/l switch window
 noremap <LEADER>h <C-w>h
 noremap <LEADER>j <C-w>j
-noremap <LEADER>k <C-w>k
+"noremap <LEADER>k <C-w>k
 noremap <LEADER>l <C-w>l
 
 " 调整分屏各窗口的尺寸大小
